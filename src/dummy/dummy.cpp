@@ -4,12 +4,10 @@
 
 Dummy::Dummy()
 {
-    std::cout << "Constructing Dummy..." << std::endl;
+  std::cout << "Constructing Dummy..." << std::endl;
 }
 
 Dummy::~Dummy()
 {
-    std::cout << "Destructing Dummy..." << std::endl;
+  std::cout << "Destructing Dummy..." << std::endl;
 }
-
-
