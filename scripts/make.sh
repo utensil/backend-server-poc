@@ -1,4 +1,4 @@
-# Run this script from the root of the project
+# NOTE: Run this script from the root of the project
 
 # Exit if any statement returns a non-true value
 set -o errexit
