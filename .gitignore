@@ -31,3 +31,4 @@
 # Customized
 build/
 doc/html/
+.DS_Store
