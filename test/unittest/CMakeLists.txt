@@ -1,14 +1,17 @@
 # This file is adapted from
 # https://github.com/miloyip/rapidjson/blob/master/test/unittest/CMakeLists.txt
 
-set(UNITTEST_SOURCES
+set(lib_static_bes bes)
+list(APPEND TEST_LIBRARIES ${lib_static_bes})
+
+set(unittest_sources
   unittest.cpp
   test_dummy.cpp
 )
 
 include(CheckCXXCompilerFlag)
 
-set(CXX_WARNING_SUPPRESS_FLAG "-Wno-global-constructors")
+set(CXX_WARNING_SUPPRESS_FLAG "-Wno-global-constructors -Wno-c++98-compat -Wno-c++98-compat-pedantic")
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -Weffc++ -Wswitch-default -Wfloat-equal ${CXX_WARNING_SUPPRESS_FLAG}")
@@ -40,7 +43,7 @@ endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-add_executable(unittest ${UNITTEST_SOURCES})
+add_executable(unittest ${unittest_sources})
 target_link_libraries(unittest ${TEST_LIBRARIES})
 
 add_dependencies(tests unittest)

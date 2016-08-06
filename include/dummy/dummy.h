@@ -5,9 +5,8 @@ class Dummy final
 {
 public:
 
-	Dummy();
-
-	~Dummy();	
+  Dummy();
+  ~Dummy();
 };
 
 #endif  // BES_DUMMY_H_

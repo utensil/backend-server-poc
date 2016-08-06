@@ -1,6 +1,9 @@
 #include "gtest/gtest.h"
+#include "dummy/dummy.h"
 
 TEST(DummyTest, testDummy)
 {
-  ASSERT_TRUE(true);
+  Dummy * pDummy = new Dummy();
+  EXPECT_TRUE(nullptr != pDummy);
+  delete pDummy;
 }
