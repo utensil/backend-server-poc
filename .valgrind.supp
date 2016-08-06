@@ -1,0 +1,13 @@
+{
+  <_ZL22copySwiftV1MangledNamePKcb>
+  Memcheck:Leak
+  ...
+  fun:_ZL22copySwiftV1MangledNamePKcb
+}
+{
+  <_ZN7testing8internal13ColoredPrintfENS0_10GTestColorEPKcz>
+  Memcheck:Leak
+  match-leak-kinds: reachable
+  ...
+  fun:_ZN7testing8internal13ColoredPrintfENS0_10GTestColorEPKcz
+}

@@ -5,3 +5,4 @@
 --error-limit=no
 --error-exitcode=1
 --gen-suppressions=all
+--suppressions=.valgrind.supp
