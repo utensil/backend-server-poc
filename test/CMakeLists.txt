@@ -3,10 +3,10 @@
 
 find_package(GTestSrc)
 
-IF(GTESTSRC_FOUND)
+if(GTESTSRC_FOUND)
     enable_testing()
 
-    if (WIN32 AND (NOT CYGWIN) AND (NOT MINGW))
+    if(WIN32 AND (NOT CYGWIN) AND (NOT MINGW))
         set(gtest_disable_pthreads ON)
         set(gtest_force_shared_crt ON)
     endif()
@@ -20,4 +20,4 @@ IF(GTESTSRC_FOUND)
 #    add_subdirectory(perftest)
     add_subdirectory(unittest)
 
-ENDIF(GTESTSRC_FOUND)
+endif()
