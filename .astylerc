@@ -1,0 +1,22 @@
+# Indent: 2 spaces, no tab
+--indent=spaces=2
+# Break brackets in "break" style
+--style=break
+# Align comments with the immediately followed line of code
+--indent-col1-comments
+# Add one blank line before and after 'if', 'for', 'while' blocks
+--break-blocks
+# Add one space before and after binary operators
+--pad-oper
+# Ensure no space around parentheses
+--unpad-paren
+# Ensure `*` and `&` to be close to the type, not the variable
+--align-pointer=type --align-reference=type
+# Add brackets for 'if', 'for', 'while' one-liner blocks
+--add-brackets
+# Remove prefix `*` before every line in comments
+--remove-comment-prefix
+# Break at logical positions to keep code length under 80
+--max-code-length=80 --break-after-logical
+# Excludes
+ --exclude=thirdparty

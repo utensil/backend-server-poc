@@ -15,10 +15,11 @@ Prerequisites
 -------------------------------
 
 * [CMake](https://cmake.org/) for building
-* (optional) [Doxygen](http://www.doxygen.org) for building documentation
 * (optional) [Google Test](https://github.com/google/googletest) for unit and performance testing
 * (optional) [Cppcheck](http://cppcheck.sourceforge.net/) for static analyzing
 * (optional) [Valgrind](http://valgrind.org/) for dynamic analyzing
+* (optional) [Doxygen](http://www.doxygen.org) for building documentation
+* (optional) [Artistic Style](http://astyle.sourceforge.net/astyle.html) for formatting code
 
 Building and Running Tests
 -------------------------------
@@ -33,6 +34,15 @@ cd build
 cmake ..
 make -j4
 ctest -V
+```
+
+Note for Developers
+-----------------------
+
+Please run the following commands at the root of the project before committing:
+
+```
+astyle --recursive --options=.astylerc *.cpp *.h
 ```
 
 License

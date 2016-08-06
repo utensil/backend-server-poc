@@ -3,7 +3,7 @@
 
 TEST(DummyTest, testDummy)
 {
-  Dummy * pDummy = new Dummy();
+  Dummy* pDummy = new Dummy();
   EXPECT_TRUE(nullptr != pDummy);
   delete pDummy;
 }
