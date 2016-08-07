@@ -31,5 +31,7 @@
 # Customized
 build/
 doc/html/
+doc/xml/
 .DS_Store
 *.orig
+*.dump
