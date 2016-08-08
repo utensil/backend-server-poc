@@ -40,7 +40,7 @@
     <spaceAfter>1</spaceAfter>
   </Operator>
   <Struct>
-    <regex>S[A-Z][a-z0-9]*([A-Z][a-z0-9]*)*</regex>
+    <regex>[a-z][a-z0-9]*([A-Z][a-z0-9]*)*</regex>
   </Struct>
   <StatementPerLine>
     <maxNumber>1</maxNumber>
