@@ -18,10 +18,12 @@ if [[ $working_dir != 'backend-server-poc' ]]; then
   die "You must run this script from the root of the project"
 fi
 
-# For using bundled Google Test in directory thirdparty
-git submodule update --init || die "git submodule update --init failed."
+if [[ -x `which valgrind` ]]; then
+  echo "Valgrind detected. Generating documentation..." 1>&2
+else
+  die "Valgrind NOT detected. Please install Valgrind." 1>&2
+fi
 
-mkdir build >/dev/null 2>&1 || true
 cd build
-cmake -G "Unix Makefiles" ..
-make -j4
+ctest -V
+bin/main

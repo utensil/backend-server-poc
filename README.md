@@ -27,13 +27,17 @@ Building and Running Tests
 After installing prerequisites, just run:
 
 ```
-# For using bundled Google Test in directory thirdparty
-git submodule update --init
-mkdir build
-cd build
-cmake ..
-make -j4
-ctest -V
+./scripts/make.sh
+./scripts/run_tests.sh
+```
+
+Generating Documentation
+-------------------------------
+
+After installing prerequisites, just run:
+
+```
+./scripts/gen_doc.sh
 ```
 
 Note for Developers
@@ -42,7 +46,8 @@ Note for Developers
 Please run the following commands at the root of the project before committing:
 
 ```
-astyle --recursive --options=.astylerc *.cpp *.h
+./scripts/format.sh
+./scripts/lint.sh
 ```
 
 License

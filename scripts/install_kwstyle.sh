@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# Exit if any statement returns a non-true value
-set -o errexit
-# Print command traces before executing command.
-# set -o xtrace
-
 die()
 {
   echo "ERROR: $@" 1>&2
@@ -18,10 +13,14 @@ if [[ $working_dir != 'backend-server-poc' ]]; then
   die "You must run this script from the root of the project"
 fi
 
-# For using bundled Google Test in directory thirdparty
-git submodule update --init || die "git submodule update --init failed."
-
-mkdir build >/dev/null 2>&1 || true
+mkdir thirdparty 2>/dev/null
+cd thirdparty
+rm -rf KWStyle
+git clone --depth=1 https://github.com/Kitware/KWStyle.git
+cd KWStyle
+mkdir build
 cd build
-cmake -G "Unix Makefiles" ..
+cmake ..
 make -j4
+make install
+cd ../../../
