@@ -56,8 +56,8 @@ message(STATUS "unittest in located at
 ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unittest")
 
 if(NOT MSVC)
-    add_test(NAME valgrind_unittest
-        COMMAND valgrind ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unittest --gtest_filter=-TODO.*
-        # For .valgrindrc
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+  add_test(NAME valgrind_unittest
+    COMMAND valgrind ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unittest --gtest_filter=-TODO.*
+    # For .valgrindrc
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 endif(NOT MSVC)
