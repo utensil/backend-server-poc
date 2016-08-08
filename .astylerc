@@ -10,13 +10,18 @@
 --pad-oper
 # Ensure no space around parentheses
 --unpad-paren
-# Ensure `*` and `&` to be close to the type, not the variable
---align-pointer=type --align-reference=type
-# Add brackets for 'if', 'for', 'while' one-liner blocks
+# Attach a pointer or reference operator to the type, not the variable
+--align-pointer=type
+--align-reference=type
+# Add brackets to unbracketed one line conditional statements
 --add-brackets
-# Remove prefix `*` before every line in comments
+# Remove the leading '*' prefix on multi-line comments
+# and indent the comment text one indent
 --remove-comment-prefix
-# Break at logical positions to keep code length under 80
---max-code-length=80 --break-after-logical
+# Break at logical positions to keep line length under 80
+--max-code-length=80
+--break-after-logical
 # Excludes
- --exclude=thirdparty
+--exclude=thirdparty
+# Do not retain a backup of the original file.
+--suffix=none
