@@ -13,6 +13,25 @@ if [[ $working_dir != 'backend-server-poc' ]]; then
   die "You must run this script from the root of the project"
 fi
 
+echo {include,src,test,thirdparty}/{**/,}*.{c,cpp,h}|xargs -n 1|grep -v -F '*' > .sourcefiles
+# echo {include,src,test}|xargs -n 1|grep -v -F '*' > .sourcedirs
+
+if [[ -x `which cppcheck` ]]; then
+  echo "Cppcheck detected. Checking..." 1>&2
+else
+  die "NOTE: Cppcheck NOT detected. Please install Cppcheck."
+fi
+
+check_ok=false
+
+cppcheck --file-list=.sourcefiles --enable=warning,performance,portability -q
+
+if [[ $? == 0 ]]; then
+  check_ok=true
+else
+  check_ok=false
+fi
+
 if [[ -x `which KWStyle` ]]; then
   echo "KWStyle detected. Checking..." 1>&2
 else
@@ -20,9 +39,18 @@ else
   bash scripts/install_kwstyle.sh || die "Install KWStyle failed"
 fi
 
-echo {include,src,test}/{**/,}*.{c,cpp,h}|xargs -n 1|grep -v -F '*' > .sourcefiles
-# echo {include,src,test}|xargs -n 1|grep -v -F '*' > .sourcedirs
-
 KWStyle -D .sourcefiles -R -v -vim
 
+if [[ $? == 0 ]]; then
+  check_ok=true
+else
+  check_ok=false
+fi
+
 echo "Check finished." 1>&2
+
+if $check_ok ; then
+  echo "Congratulations! Your code is GOOD."
+else
+  die "Please fix the issues reported above."
+fi
