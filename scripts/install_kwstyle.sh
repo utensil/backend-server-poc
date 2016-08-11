@@ -16,7 +16,7 @@ fi
 mkdir thirdparty 2>/dev/null
 cd thirdparty
 rm -rf KWStyle
-git clone --depth=1 https://github.com/Kitware/KWStyle.git
+git clone --depth=1 https://github.com/utensil-contrib/KWStyle.git
 cd KWStyle
 mkdir build
 cd build
