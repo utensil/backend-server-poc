@@ -5,8 +5,8 @@
 int main(int argc, char const* argv[])
 {
 
-  Dummy dummy;
+    Dummy dummy;
 
-  std::cout << "It works!" << std::endl;
-  return 0;
+    std::cout << "It works!" << std::endl;
+    return 0;
 }

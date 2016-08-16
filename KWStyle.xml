@@ -17,7 +17,7 @@
   <Spaces>0</Spaces>
   <Indent>
     <type>SPACE</type>
-    <size>2</size>
+    <size>4</size>
     <noHeader>true</noHeader>
     <allowBlockLine>true</allowBlockLine>
   </Indent>

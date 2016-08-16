@@ -1,5 +1,5 @@
 # Indent: 2 spaces, no tab
---indent=spaces=2
+--indent=spaces=4
 # Break brackets in "break" style
 --style=break
 # Align comments with the immediately followed line of code
